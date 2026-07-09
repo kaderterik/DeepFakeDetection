@@ -31,7 +31,7 @@ Sosyal medyada hızla yayılan yapay zeka üretimi sahte videolar (deepfake), ki
 ## 📁 Projeler
 
 ### 🔷 [1-deepfake-detection-research](./1-deepfake-detection-research/)
-FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı araştırma projesi.
+FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren araştırma projesi.
 
 | Deney | Konu | Sonuç |
 |-------|------|-------|
