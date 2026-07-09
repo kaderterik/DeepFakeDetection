@@ -1,0 +1,34 @@
+experiment: EXP001
+description: "Baseline — No augmentation, standard Adam, default LR"
+
+model:
+  architecture: ResNet18
+  pretrained: true
+  num_classes: 2
+  freeze_layers: false
+
+optimizer:
+  name: Adam
+  learning_rate: 0.001
+  weight_decay: 0.0
+
+training:
+  epochs: 3
+  batch_size: 32
+  augmentation: false
+
+data:
+  dataset: FaceForensics++
+  compression: C23
+  image_size: 224
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+results:
+  accuracy: 0.9184
+  precision: 0.9468
+  recall: 0.9577
+  specificity: 0.6954
+  f1_score: 0.9522
+  roc_auc: 0.9500
+  train_time_min: 24.49

@@ -1,0 +1,42 @@
+experiment: EXP002
+description: "Data Augmentation — RandomFlip, Rotation 15deg, ColorJitter added"
+
+model:
+  architecture: ResNet18
+  pretrained: true
+  num_classes: 2
+  freeze_layers: false
+
+optimizer:
+  name: Adam
+  learning_rate: 0.001
+  weight_decay: 0.0
+
+training:
+  epochs: 3
+  batch_size: 32
+  augmentation: true
+  augmentation_config:
+    random_horizontal_flip: true
+    random_rotation_degrees: 15
+    color_jitter:
+      brightness: 0.2
+      contrast: 0.2
+      saturation: 0.2
+      hue: 0.1
+
+data:
+  dataset: FaceForensics++
+  compression: C23
+  image_size: 224
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+results:
+  accuracy: 0.8899
+  precision: 0.8975
+  recall: 0.9826
+  specificity: 0.3651
+  f1_score: 0.9382
+  roc_auc: 0.9110
+  train_time_min: 25.0

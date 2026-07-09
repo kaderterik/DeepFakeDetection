@@ -1,0 +1,40 @@
+# Veri seti klasörü (Git ile takip edilmez)
+data/raw/
+data/processed/
+
+# Eğitilmiş model ağırlıkları (çok büyük dosyalar)
+results/trained_models/*.pth
+results/trained_models/*.pt
+results/trained_models/*.h5
+
+# Python önbellek dosyaları
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# Jupyter Notebook geçici dosyaları
+.ipynb_checkpoints
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ortam değişkenleri / gizli bilgiler
+.env
+*.env
+
+# Geçici scriptler (temizlendi)
+md_to_docx.py
+md_to_docx_v2.py
+append_table.py
+append_single_row_table.py
+append_vertical_table.py
+create_styled_docx.py
+
+# Eski DOCX versiyonları
+Tez_Makale_Taslagi.docx
+Profesyonel_Tez_Raporu.docx
+BAUN_Stilli_Tez_Raporu_V2.docx
+BAUN_Stilli_Tez_Raporu_V3.docx

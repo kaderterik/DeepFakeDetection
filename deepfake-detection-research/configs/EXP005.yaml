@@ -1,0 +1,34 @@
+experiment: EXP005
+description: "EfficientNet-B0 — Modern architecture comparison with optimum hyperparameters (LR=0.0001)"
+
+model:
+  architecture: EfficientNet-B0
+  pretrained: true
+  num_classes: 2
+  freeze_layers: false
+
+optimizer:
+  name: Adam
+  learning_rate: 0.0001
+  weight_decay: 0.0
+
+training:
+  epochs: 3
+  batch_size: 32
+  augmentation: false
+
+data:
+  dataset: FaceForensics++
+  compression: C23
+  image_size: 224
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+results:
+  accuracy: 0.9442
+  precision: 0.9747
+  recall: 0.9593
+  specificity: 0.8590
+  f1_score: 0.9669
+  roc_auc: 0.9770
+  train_time_min: 35.84
