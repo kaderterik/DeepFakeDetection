@@ -90,15 +90,3 @@ EfficientNet-B0 en yüksek doğruluğu verdi (%94.42) ancak eğitim süresi **%4
 
 ---
 
-## 📚 Kaynaklar
-
-- Rossler et al., "FaceForensics++: Learning to Detect Manipulated Facial Images" (ICCV 2019)
-- Tan & Le, "EfficientNet: Rethinking Model Scaling for CNNs" (ICML 2019)
-- Yan et al., "Transcending Forgery Specificity with Latent Space Augmentation" (CVPR 2024)
-
----
-
-## 👤 Araştırmacı
-
-**Kader Terik** | BAUN CENG — Balıkesir Üniversitesi Bilgisayar Mühendisliği  
-📅 Tarih: Temmuz 2026
