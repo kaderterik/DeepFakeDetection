@@ -21,8 +21,4 @@ Sosyal medyada hızla yayılan yapay zeka üretimi sahte videolar (deepfake), ki
 
 
 
-## 👤 Araştırmacı
 
-**Kader Terik**  
-Balıkesir Üniversitesi — Bilgisayar Mühendisliği Bölümü (BAUN CENG)  
-📅 2026
