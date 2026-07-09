@@ -43,8 +43,6 @@ FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı
 
 > **En kritik bulgu:** Öğrenme oranını düşürmek (LR: 0.001 → 0.0001), modelin gerçek yüzleri tanıma başarısını **%69'dan %88'e** çıkardı.
 
----
-
 ## 🛠️ Kullanılan Teknolojiler
 
 | Teknoloji | Amaç |
@@ -56,11 +54,4 @@ FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı
 | **matplotlib** | Grafik ve görselleştirme |
 | **FaceForensics++** | Benchmark veri seti |
 
----
-
-## 👤 Araştırmacı
-
-**Kader Terik**  
-Balıkesir Üniversitesi — Bilgisayar Mühendisliği Bölümü (BAUN CENG)  
-📅 2026
 
