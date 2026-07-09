@@ -1,4 +1,4 @@
-# 🧠 DeepFake Detection — BAUN CENG Research Repository
+# 🧠 DeepFake Detection — Research Repository
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch)](https://pytorch.org)
@@ -31,7 +31,7 @@ Sosyal medyada hızla yayılan yapay zeka üretimi sahte videolar (deepfake), ki
 ## 📁 Projeler
 
 ### 🔷 [1-deepfake-detection-research](./1-deepfake-detection-research/)
-FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı araştırma projesi.
+FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren araştırma projesi.
 
 | Deney | Konu | Sonuç |
 |-------|------|-------|
@@ -42,8 +42,6 @@ FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı
 | EXP005 | EfficientNet-B0 | Acc: %94.42 |
 
 > **En kritik bulgu:** Öğrenme oranını düşürmek (LR: 0.001 → 0.0001), modelin gerçek yüzleri tanıma başarısını **%69'dan %88'e** çıkardı.
-
----
 
 ## 🛠️ Kullanılan Teknolojiler
 
@@ -56,11 +54,4 @@ FaceForensics++ C23 veri seti üzerinde **5 kontrollü deney** içeren kapsamlı
 | **matplotlib** | Grafik ve görselleştirme |
 | **FaceForensics++** | Benchmark veri seti |
 
----
-
-## 👤 Araştırmacı
-
-**Kader Terik**  
-Balıkesir Üniversitesi — Bilgisayar Mühendisliği Bölümü (BAUN CENG)  
-📅 2026
 
