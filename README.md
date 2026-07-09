@@ -1,4 +1,4 @@
-# 🧠 DeepFake Detection — BAUN CENG Research Repository
+# 🧠 DeepFake Detection — Research Repository
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch)](https://pytorch.org)
