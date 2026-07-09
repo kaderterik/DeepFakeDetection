@@ -27,7 +27,7 @@ Bu araştırma projesi, FaceForensics++ C23 veri setinde **5 kontrollü deney** 
 | EXP004 | Adam → AdamW | 91.65% | 52.51% | 95.25% | 0.944 |
 | EXP005 | ResNet18 → EfficientNet-B0 | **94.42%** | 85.90% | **96.69%** | 0.977 |
 
-> ⭐ EXP003 en iyi maliyet-performans dengesi | EXP005 en yüksek ham doğruluk
+> ⭐ EXP003 en iyi maliyet-performans dengesi &nbsp;|&nbsp; EXP005 en yüksek ham doğruluk
 
 ---
 
@@ -35,30 +35,23 @@ Bu araştırma projesi, FaceForensics++ C23 veri setinde **5 kontrollü deney** 
 
 ```
 deepfake-detection-research/
-├── 📓 notebooks/              # Google Colab deneyleri
-│   ├── 04_EXP001_Baseline.ipynb
-│   ├── 05_EXP002_Augmentation.ipynb
-│   ├── 06_EXP003_LowLR.ipynb
-│   ├── 07_EXP004_AdamW.ipynb
-│   └── 08_EXP005_EfficientNet.ipynb
-├── ⚙️ configs/                # Deney parametreleri (YAML)
+├── 📓 02_03_Dataset_ve_EDA.ipynb   # Veri seti keşif analizi (EDA)
+├── 📄 README.md                    # Bu dosya
+├── 📄 .gitignore
+├── ⚙️ configs/                     # Deney parametreleri (YAML)
 │   ├── EXP001.yaml
 │   ├── EXP002.yaml
 │   ├── EXP003.yaml
 │   ├── EXP004.yaml
 │   └── EXP005.yaml
-├── 📁 data/                   # Veri seti rehberi (ham veri hariç)
-│   └── README.md
-├── 📈 reports/                # PDF raporlar ve grafikler
-│   ├── pdf/                   # EXP001–EXP005 PDF sonuç raporları
-│   ├── figures/               # Karmaşıklık matrisi, ROC eğrileri
-│   └── tables/                # Performans karşılaştırma tabloları
-├── 📊 results/
-│   ├── experiment_log.csv     # Tüm deney metrikleri
-│   └── trained_models/        # Eğitilmiş model ağırlıkları (gitignore)
-├── 📄 docs/
-│   └── BAUN_Stilli_Tez_Raporu_V4.docx
-└── README.md
+├── 📈 reports/                     # PDF sonuç raporları (600 DPI)
+│   ├── 04_EXP001_Sonuclar.pdf
+│   ├── 05_EXP002_Sonuclar.pdf
+│   ├── 06_EXP003_Sonuclar.pdf
+│   ├── 07_EXP004_Sonuclar.pdf
+│   └── 08_EXP005_Sonuclar.pdf
+└── 📊 results/
+    └── experiment_log.csv          # Tüm deney metrikleri (28 sütun)
 ```
 
 ---
@@ -66,7 +59,7 @@ deepfake-detection-research/
 ## 🧪 Deneysel Metodoloji
 
 ### Tek Değişkenli İzolasyon
-Her deneyde **yalnızca bir** hiperparametre veya mimari özellik değiştirilmiş, diğer tüm ayarlar sabit tutulmuştur. Bu yöntem, hangi faktörün performansı etkilediğini kesin olarak belirlemeyi sağlar.
+Her deneyde **yalnızca bir** hiperparametre veya mimari özellik değiştirilmiş, diğer tüm ayarlar sabit tutulmuştur.
 
 ### Veri Seti
 - **FaceForensics++ C23** — Önceden kırpılmış yüz görüntüleri
@@ -83,37 +76,25 @@ Her deneyde **yalnızca bir** hiperparametre veya mimari özellik değiştirilmi
 ## 🔑 Ana Bulgular
 
 ### 1. Veri Artırımı Paradoksu 🚨
-Cropped (kırpılmış) yüzlere uygulanan basit RGB augmentasyonlar (flip, rotate, ColorJitter), modelin gerçek yüzleri sahte olarak sınıflandırma oranını dramatik biçimde artırdı:
-- Specificity: **%69.54 → %36.51** (EXP001→EXP002)
+Cropped yüzlere uygulanan basit augmentasyonlar Specificity'yi dramatik düşürdü:
+- **%69.54 → %36.51** (EXP001 → EXP002)
 
 ### 2. Öğrenme Oranı Etkisi ✅
-LR'nin 0.001'den 0.0001'e düşürülmesi, sınıf dengesizliği sorununu büyük ölçüde çözdü:
-- Specificity: **%69.54 → %88.51** (EXP001→EXP003)
-- ROC-AUC: **0.950 → 0.978**
+LR'nin 0.001'den 0.0001'e düşürülmesi sınıf dengesizliğini çözdü:
+- **%69.54 → %88.51** Specificity (EXP001 → EXP003)
+- **0.950 → 0.978** ROC-AUC
 
 ### 3. Maliyet-Performans Dengesi ⚖️
-EfficientNet-B0 en yüksek doğruluğu verdi (%94.42) ancak eğitim süresi %46 arttı (35.84 dk vs ~25 dk).
-**Öneri:** Gerçek zamanlı uygulamalar için ResNet18 + LR=0.0001 kombinasyonu.
-
----
-
-## 📓 Notebook Kullanımı
-
-Deneyleri çalıştırmak için:
-
-1. İlgili `.ipynb` dosyasını **Google Colab**'da açın
-2. `Runtime → Change runtime type → GPU` seçin
-3. Veri setini Google Drive'a bağlayın (bkz. `data/README.md`)
-4. Hücreleri sırasıyla çalıştırın
+EfficientNet-B0 en yüksek doğruluğu verdi (%94.42) ancak eğitim süresi **%46 arttı** (35.84 dk vs ~25 dk).
+**Öneri:** Gerçek zamanlı uygulamalar için **ResNet18 + LR=0.0001** kombinasyonu.
 
 ---
 
 ## 📚 Kaynaklar
 
 - Rossler et al., "FaceForensics++: Learning to Detect Manipulated Facial Images" (ICCV 2019)
-- Tan & Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks" (ICML 2019)
-- Yan et al., "Transcending Forgery Specificity with Latent Space Augmentation for Generalizable Deepfake Detection" (CVPR 2024)
-- He et al., "Deep Residual Learning for Image Recognition" (CVPR 2016)
+- Tan & Le, "EfficientNet: Rethinking Model Scaling for CNNs" (ICML 2019)
+- Yan et al., "Transcending Forgery Specificity with Latent Space Augmentation" (CVPR 2024)
 
 ---
 
